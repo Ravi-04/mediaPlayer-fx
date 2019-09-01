@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.media.MediaView?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="563.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#openVideo" text="Close" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <bottom>
+      <StackPane prefHeight="75.0" prefWidth="700.0" BorderPane.alignment="CENTER">
+         <children>
+            <FontAwesomeIcon fx:id="play" glyphName="PLAY" onMouseClicked="#playVideo" size="2em" />
+            <FontAwesomeIcon fx:id="pause" glyphName="PAUSE" onMouseClicked="#pauseVideo" size="2em" />
+            <FontAwesomeIcon glyphName="ARROW_RIGHT" onMouseClicked="#fastVideo" size="1.5em">
+               <StackPane.margin>
+                  <Insets left="80.0" />
+               </StackPane.margin>
+            </FontAwesomeIcon>
+            <FontAwesomeIcon glyphName="ARROW_LEFT" onMouseClicked="#slowVideo" size="1.5em">
+               <StackPane.margin>
+                  <Insets right="80.0" />
+               </StackPane.margin>
+            </FontAwesomeIcon>
+            <FontAwesomeIcon glyphName="SQUARE" onMouseClicked="#lastVideo" size="1.5em">
+               <StackPane.margin>
+                  <Insets left="150.0" />
+               </StackPane.margin>
+            </FontAwesomeIcon>
+            <FontAwesomeIcon glyphName="REFRESH" onMouseClicked="#refreshVideo" size="1.5em">
+               <StackPane.margin>
+                  <Insets right="150.0" />
+               </StackPane.margin>
+            </FontAwesomeIcon>
+            <Slider fx:id="volumeSlider" maxWidth="80.0" minWidth="20.0">
+               <StackPane.margin>
+                  <Insets left="100.0" right="500.0" />
+               </StackPane.margin>
+            </Slider>
+         </children>
+      </StackPane>
+   </bottom>
+   <center>
+      <MediaView fx:id="media" fitHeight="200.0" fitWidth="200.0" BorderPane.alignment="CENTER" />
+   </center>
+</BorderPane>
